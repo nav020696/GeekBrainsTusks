@@ -2,7 +2,7 @@ package Lesson_2.Exceptions;
 
 public class Main {
     public static void main(String[] args) {
-        String[][] array = {{"1","2","3","4"}, {"5","6","6","7"}, {"5","6","8"}, {"5","6","9","10"} };
+        String[][] array = {{"1","2","3","4"}, {"5","6","6","7"}, {"5","6","8","a"}, {"5","6","9","10"} };
         try {
             System.out.println("Сумма чисел в массиве array: " + arraySum(array));
         } catch (MyArraySizeException | MyArrayDataException e) {
