@@ -1,14 +1,17 @@
 package Lesson_3.TelephoneNumbers;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 public class TelephoneNumbers {
     Map<String, HashSet<String>> map = new HashMap<>();
     public void add(String surname, String... numbers){
-        map.put(surname, new HashSet<>(Arrays.asList(numbers)));
+        if (!map.containsKey(surname)) {
+            map.put(surname, new HashSet<>(Arrays.asList(numbers)));
+        } else{
+            HashSet<String> hm = map.get(surname);
+            Collections.addAll(hm, numbers);
+            map.put(surname,hm);
+        }
     }
 
     public void get(String surname){
