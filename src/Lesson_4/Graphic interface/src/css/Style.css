@@ -1,3 +1,28 @@
 #btn {
- -fx-background-color: red;
+ -fx-background-color: #ffca06;
+ -fx-font-weight: bolder;
+ -fx-border-style: solid;
+ -fx-border-color: rgb(136, 242, 169);
+ -fx-border-width: 3px;
+}
+#btn: hover {
+ -fx-background-color: rgb(136, 242, 169);
+}
+
+#textField{
+ -fx-background-color: white;
+  -fx-border-style: solid;
+  -fx-border-color: rgb(136, 242, 169);
+  -fx-border-width: 3px;
+}
+
+#textArea .content {
+-fx-background-image: url("flower.jpg");
+-fx-background-size: cover;
+-fx-opacity: 0.8;
+}
+
+#textArea{
+    -fx-text-fill: black;
+    -fx-font-weight: bolder;
 }

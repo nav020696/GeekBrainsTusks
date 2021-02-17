@@ -14,21 +14,18 @@ import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
-//        try(BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
-//            System.out.println("Введите пароль");
-//            String password = reader.readLine();
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-        System.out.println(checkPassword("paSsword"));
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            System.out.println("Введите пароль");
+            String password = reader.readLine();
+            System.out.println(checkPassword(password));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     static boolean checkPassword(String password){
-        Pattern p1 = Pattern.compile("^.*[A-Z].*$"); //должна быть заглавная буква
-        //Pattern p2 = Pattern.compile("[a-z]&&[A-Z]&&[0-9]"); //должна быть заглавная буква
-        Pattern p2 = Pattern.compile("^.*[0-9].*$"); //должны быть хотя бы 1 цифра
-        //Pattern p3 = Pattern.compile("\b\S\S\S\S\S\S\S\S\b"); //должны быть хотя бы 1 цифра
-        Matcher m1 = p2.matcher(password);
+        Pattern p1 = Pattern.compile("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])+.{8,}"); //?= - значит логическое выражение (блок)
+        Matcher m1 = p1.matcher(password);
         return m1.matches();
     }
 }

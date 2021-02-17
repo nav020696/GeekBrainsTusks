@@ -13,7 +13,7 @@ public class Controller {
     TextField textField;
 
     public void sendMsg(){
-        textArea.appendText(textField.getText() + "\n");
+        textArea.appendText("Вы: " + textField.getText() + "\n");
         textField.clear();
         textField.requestFocus();
     }
